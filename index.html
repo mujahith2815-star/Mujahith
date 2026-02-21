@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mohammed Mujahith | AI & Embedded Systems</title>
+<title>Mohammed | AI Systems</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -14,64 +15,81 @@
 
 body{
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg,#0f172a,#1e293b);
+    background:#050816;
     color:white;
+    overflow-x:hidden;
+}
+
+/* Neon Glow Animation */
+@keyframes glow {
+    0% { box-shadow: 0 0 10px #00ffff; }
+    50% { box-shadow: 0 0 25px #00ffff; }
+    100% { box-shadow: 0 0 10px #00ffff; }
 }
 
 header{
     text-align:center;
-    padding:50px 20px;
+    padding:60px 20px;
 }
 
+/* Profile Neon Circle */
 .profile-img{
-    width:160px;
-    height:160px;
+    width:170px;
+    height:170px;
     border-radius:50%;
     object-fit:cover;
-    border:4px solid #00ffff;
-    box-shadow:0 0 25px #00ffff55;
+    border:3px solid #00ffff;
+    animation:glow 2s infinite ease-in-out;
     margin-bottom:20px;
 }
 
 h1{
-    font-size:32px;
+    font-size:34px;
+    color:#00ffff;
+    text-shadow:0 0 15px #00ffff;
 }
 
 .subtitle{
-    color:#00ffff;
     margin-top:10px;
+    color:#00cccc;
 }
 
+/* Section */
 section{
-    max-width:1100px;
-    margin:40px auto;
+    max-width:1200px;
+    margin:50px auto;
     padding:0 20px;
 }
 
 h2{
-    margin-bottom:20px;
+    margin-bottom:25px;
     color:#00ffff;
-    border-left:4px solid #00ffff;
-    padding-left:10px;
+    text-shadow:0 0 10px #00ffff;
+    border-bottom:1px solid #00ffff55;
+    padding-bottom:8px;
 }
 
+/* Neon Card */
 .card{
-    background:#1e293b;
+    background:#0b1120;
     padding:20px;
-    border-radius:10px;
-    margin-bottom:15px;
+    border:1px solid #00ffff33;
+    border-radius:12px;
+    margin-bottom:20px;
     transition:0.3s;
 }
 
 .card:hover{
+    border-color:#00ffff;
+    box-shadow:0 0 20px #00ffff55;
     transform:translateY(-5px);
-    box-shadow:0 10px 25px #00ffff33;
 }
 
+/* Project Grid */
 .projects{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:15px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
 }
 
 a{
@@ -80,57 +98,58 @@ a{
 }
 
 a:hover{
-    text-decoration:underline;
+    text-shadow:0 0 10px #00ffff;
 }
 
+/* Footer */
 footer{
     text-align:center;
     padding:30px;
-    background:#111827;
-    margin-top:50px;
+    border-top:1px solid #00ffff33;
+    margin-top:60px;
+    background:#0b1120;
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
-    <img src="Profile.jpg" alt="Profile Photo" class="profile-img">
+    <img src="profile.jpg" alt="Profile Photo" class="profile-img">
     <h1>M. Mohammed Mujahith</h1>
-    <p class="subtitle">AI & Data Science | Embedded Systems Developer</p>
+    <p class="subtitle">AI • Embedded Systems • Intelligent Architecture</p>
 </header>
 
 <section>
 <h2>Career</h2>
 <div class="card">
-Building intelligent hardware ecosystems that combine AI, embedded systems,
-wireless communication, and automation into independent real-world platforms.
+Building intelligent hardware ecosystems integrating AI, embedded systems,
+wireless communication, and autonomous automation platforms.
 </div>
 </section>
 
 <section>
 <h2>Skills & Abilities</h2>
 <div class="card">
-Python • ESP32 • Raspberry Pi • Linux Systems • Embedded C • Hardware Prototyping • 
-AI Model Deployment • BLE • LoRa • WiFi • System Architecture • Automation Engineering
+Python • ESP32 • Raspberry Pi • Linux • Embedded C • AI Deployment • BLE • LoRa • WiFi • 
+System Architecture • Hardware Prototyping • Automation Engineering
 </div>
 </section>
 
 <section>
 <h2>Knowledge</h2>
 <div class="card">
-Artificial Intelligence fundamentals, distributed communication systems,
-hardware-software integration, operating system design, sensor networks,
-AI acceleration research, and embedded optimization.
+Artificial Intelligence, distributed networks, system design,
+hardware-software integration, embedded optimization, AI acceleration research.
 </div>
 </section>
 
 <section>
 <h2>Interests & Goals</h2>
 <div class="card">
-Focused on building a unified intelligent ecosystem integrating AI, communication,
-wearable systems, adaptive operating systems, and decentralized automation.
-Long-term mission: create a self-evolving hardware AI architecture.
+Mission to build a unified intelligent ecosystem combining AI, communication,
+wearables, adaptive systems, and decentralized automation.
 </div>
 </section>
 
@@ -140,42 +159,42 @@ Long-term mission: create a self-evolving hardware AI architecture.
 <div class="projects">
 
 <div class="card">Orvix AI Core System – Portable voice-controlled hardware AI.</div>
-<div class="card">Orvix Advanced Architecture Blueprint – 14-layer cognitive framework.</div>
-<div class="card">AI Phone-Like Device – Raspberry Pi smart device.</div>
-<div class="card">Custom 40×32 LED Matrix Display – Self-built SMD visualization board.</div>
-<div class="card">Long-Range Radio Communication Device – SIM-free private system.</div>
-<div class="card">Satellite Ground Server – AI communication base station.</div>
+<div class="card">Orvix Advanced Architecture Blueprint – 14-layer framework.</div>
+<div class="card">AI Phone-Like Device – Raspberry Pi smart hardware.</div>
+<div class="card">Custom 40×32 LED Matrix Display – Self-built SMD board.</div>
+<div class="card">Long-Range Radio Communication Device – SIM-free system.</div>
+<div class="card">Satellite Ground Server – AI coordination station.</div>
 <div class="card">Hybrid Satellite + WiFi Network – Integrated routing system.</div>
-<div class="card">ESP32 Embedded Control Experiments – Real-time hardware control.</div>
-<div class="card">Multi-Bluetooth Audio Broadcaster – Synchronized audio system.</div>
-<div class="card">Phi3 + Ollama Local Voice AI – Self-hosted speech AI pipeline.</div>
+<div class="card">ESP32 Embedded Control Experiments – Real-time control system.</div>
+<div class="card">Multi-Bluetooth Audio Broadcaster – Synchronized streaming.</div>
+<div class="card">Phi3 + Ollama Local Voice AI – Self-hosted speech AI.</div>
 <div class="card">Modular Code Execution Framework – Structured runtime system.</div>
 <div class="card">Universal Motherboard Concept – Multi-frequency AI hardware.</div>
-<div class="card">AI Acceleration Research – TPU & Raspberry Pi optimization.</div>
-<div class="card">Web-to-Hardware AI Transition – AI to physical control system.</div>
-<div class="card">Linux System Engineering Architecture – Structured service layers.</div>
-<div class="card">Direct-Execution AI Security Model – Safeguarded instant execution.</div>
-<div class="card">Technical Learning Documentation System – Structured engineering study.</div>
-<div class="card">Orvix Band Lite – Wearable environmental field detector.</div>
-<div class="card">Pocket Satellite Ground Node – Portable sync device.</div>
+<div class="card">AI Acceleration Research – TPU optimization experiments.</div>
+<div class="card">Web-to-Hardware AI Transition – Physical AI integration.</div>
+<div class="card">Linux System Engineering Architecture – Structured deployment.</div>
+<div class="card">Direct-Execution AI Security Model – Safeguarded instant AI.</div>
+<div class="card">Technical Learning Documentation System – Structured study framework.</div>
+<div class="card">Orvix Band Lite – Wearable field detector.</div>
+<div class="card">Pocket Satellite Ground Node – Portable sync unit.</div>
 <div class="card">Modular Mic Cube – Beamforming microphone system.</div>
 <div class="card">Universal Frequency Badge – Multi-protocol wearable remote.</div>
-<div class="card">Air-Gesture Controller Ring – Motion-based BLE control.</div>
-<div class="card">Self-Learning Hardware OS – Adaptive evolving operating system.</div>
-<div class="card">Room Brain Automation Node – Offline environmental automation.</div>
-<div class="card">Cylindrical Personal AI Tower – Integrated AI hub system.</div>
-<div class="card">Neural-State Display Interface – Visual AI state representation.</div>
+<div class="card">Air-Gesture Controller Ring – Motion-based BLE controller.</div>
+<div class="card">Self-Learning Hardware OS – Adaptive evolving OS.</div>
+<div class="card">Room Brain Automation Node – Offline automation device.</div>
+<div class="card">Cylindrical Personal AI Tower – Integrated AI hub.</div>
+<div class="card">Neural-State Display Interface – AI state visualization.</div>
 <div class="card">Multi-Device Telepresence Mesh – Low-power camera network.</div>
-<div class="card">Material Acoustic Fingerprint Scanner – Vibration-based detection.</div>
-<div class="card">Pocket Lightning Mapper – RF storm detection system.</div>
-<div class="card">Personal Magnetic Mapping System – Hall-sensor mapping tool.</div>
-<div class="card">Object-Tagging Laser Beacon System – BLE object tracker.</div>
-<div class="card">Micro-Weather Seed Network – Mini atmospheric sensors.</div>
-<div class="card">Smell-Pattern Detection System – Chemical analyzer device.</div>
+<div class="card">Material Acoustic Fingerprint Scanner – Vibration detection.</div>
+<div class="card">Pocket Lightning Mapper – RF storm sensor.</div>
+<div class="card">Personal Magnetic Mapping System – Hall-sensor mapping.</div>
+<div class="card">Object-Tagging Laser Beacon System – BLE anchor tracker.</div>
+<div class="card">Micro-Weather Seed Network – Atmospheric sensors.</div>
+<div class="card">Smell-Pattern Detection System – Chemical analyzer.</div>
 <div class="card">Vibration-Language Wristband – Haptic communication wearable.</div>
-<div class="card">Ultrasonic Sound Hologram Projector – Floating directional audio.</div>
+<div class="card">Ultrasonic Sound Hologram Projector – Floating audio system.</div>
 <div class="card">Living Fractal Circuit Board – Pulse-driven electronic art.</div>
-<div class="card">Thought-Trigger EMG Key – Muscle-based AI command system.</div>
+<div class="card">Thought-Trigger EMG Key – Muscle-based AI commands.</div>
 <div class="card">Silence Mapping System – Acoustic absorption analyzer.</div>
 
 </div>
@@ -184,15 +203,14 @@ Long-term mission: create a self-evolving hardware AI architecture.
 <section>
 <h2>Contact</h2>
 <div class="card">
-📞 +91 7598134898<br>
 📧 mujahith2815@gmail.com<br>
 🔗 <a href="https://www.linkedin.com/in/mohammed-mujahith-m-87ba90303" target="_blank">LinkedIn</a><br>
-💬 <a href="https://discord.gg/8VfMZEnJ" target="_blank">Discord Server</a>
+💬 <a href="https://discord.gg/8VfMZEnJ" target="_blank">Discord</a>
 </div>
 </section>
 
 <footer>
-© 2026 M. Mohammed Mujahith | AI & Embedded Systems Developer
+© 2026 M. Mohammed Mujahith
 </footer>
 
 </body>
