@@ -18,7 +18,6 @@ body{
     color:white;
 }
 
-/* Header */
 header{
     position:fixed;
     top:0;
@@ -47,12 +46,10 @@ nav a:hover{
     color:#38bdf8;
 }
 
-/* Sections */
 section{
     padding:100px 10% 60px 10%;
 }
 
-/* Hero */
 .hero{
     display:flex;
     justify-content:space-between;
@@ -78,7 +75,6 @@ section{
     margin-bottom:15px;
 }
 
-/* Profile Image */
 .profile-img{
     width:260px;
     height:260px;
@@ -89,14 +85,12 @@ section{
     box-shadow:0 0 25px #38bdf8;
 }
 
-/* Headings */
 h3{
     font-size:28px;
     margin-bottom:25px;
     color:#38bdf8;
 }
 
-/* Cards */
 .card-container{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -118,6 +112,7 @@ h3{
 
 .card h4{
     margin-bottom:10px;
+    font-size:18px;
 }
 
 .card p{
@@ -125,26 +120,11 @@ h3{
     line-height:1.6;
 }
 
-/* Footer */
 footer{
-    background:#020617;
     text-align:center;
-    padding:30px 10%;
-    margin-top:40px;
-}
-
-footer p{
-    margin-bottom:10px;
-}
-
-footer .footer-links a{
-    color:#38bdf8;
-    margin:0 10px;
-    text-decoration:none;
-}
-
-footer .footer-links a:hover{
-    text-decoration:underline;
+    padding:25px;
+    background:#020617;
+    font-size:14px;
 }
 </style>
 </head>
@@ -162,234 +142,11 @@ footer .footer-links a:hover{
 </header>
 
 <section id="about" class="hero">
-    <div class="hero-text">
-        <h2>Hi, I'm <span>M. Mohammed Mujahith</span></h2>
-        <p>AI & Data Science student and Embedded Systems Developer focused on intelligent hardware-software systems.</p>
-        <p>I specialize in integrating AI models with embedded platforms, designing smart automation systems, and developing electronics-based solutions.</p>
-        <p>My goal is to build next-generation AI-powered embedded devices for real-world applications.</p>
-    </div>
-    <img src="Profile.jpg" alt="Profile Photo" class="profile-img">
-</section>
-
-<section id="skills">
-    <h3>Technical Skills</h3>
-    <div class="card-container">
-        <div class="card">
-            <h4>Embedded Systems</h4>
-            <p>Microcontrollers, real-time systems, sensor integration.</p>
-        </div>
-        <div class="card">
-            <h4>Electronics & Circuit Design</h4>
-            <p>Hardware prototyping and electronic component analysis.</p>
-        </div>
-        <div class="card">
-            <h4>AI & Data Science</h4>
-            <p>Machine learning fundamentals and AI model deployment.</p>
-        </div>
-        <div class="card">
-            <h4>Automation Systems</h4>
-            <p>Smart control systems using embedded platforms.</p>
-        </div>
-    </div>
-</section>
-
-<section id="projects">
-    <h3>Projects</h3>
-    <div class="card-container">
-        <div class="card">
-            <h4>AI-Based Smart Embedded System</h4>
-            <p>Integrated AI decision-making into embedded hardware systems.</p>
-        </div>
-        <div class="card">
-            <h4>Sensor-Based Monitoring System</h4>
-            <p>Built monitoring platform using sensors and microcontrollers.</p>
-        </div>
-        <div class="card">
-            <h4>Automation Using Microcontrollers</h4>
-            <p>Designed scalable embedded automation solutions.</p>
-        </div>
-        <div class="card">
-            <h4>AI Model Integration with Devices</h4>
-            <p>Implemented intelligent processing inside embedded environments.</p>
-        </div>
-    </div>
-</section>
-
-<section id="contact">
-    <h3>Contact</h3>
-    <div class="card-container">
-        <div class="card">
-            <h4>Phone</h4>
-            <p>+91 7598134898</p>
-        </div>
-        <div class="card">
-            <h4>Email</h4>
-            <p>mujahith2815@gmail.com</p>
-        </div>
-        <div class="card">
-            <h4>Discord</h4>
-            <p><a href="https://discord.gg/8VfMZEnJ" target="_blank" style="color:#38bdf8;">Join Discord</a></p>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <p>&copy; 2026 M. Mohammed Mujahith</p>
-    <div class="footer-links">
-        <a href="#about">Home</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
-    <p>AI & Embedded Systems Developer</p>
-</footer>
-
-</body>
-</html>    border-radius:12px;
-    transition:0.3s ease;
-}
-
-.card:hover{
-    transform:translateY(-6px);
-    background:#38bdf8;
-    color:#0f172a;
-}
-
-.card h4{
-    margin-bottom:10px;
-}
-
-.card p{
-    font-size:14px;
-    line-height:1.6;
-}
-
-/* Footer */
-footer{
-    background:#020617;
-    text-align:center;
-    padding:30px 10%;
-    margin-top:40px;
-}
-
-footer p{
-    margin-bottom:10px;
-}
-
-footer .footer-links a{
-    color:#38bdf8;
-    margin:0 10px;
-    text-decoration:none;
-}
-
-footer .footer-links a:hover{
-    text-decoration:underline;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-    <h1>Mujahith</h1>
-    <nav>
-        <a href="#about">Home</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
-
-<section id="about" class="hero">
-    <div class="hero-text">
-        <h2>Hi, I'm <span>M. Mohammed Mujahith</span></h2>
-        <p>AI & Data Science student and Embedded Systems Developer focused on intelligent hardware-software systems.</p>
-        <p>I specialize in integrating AI models with embedded platforms, designing smart automation systems, and developing electronics-based solutions.</p>
-        <p>My goal is to build next-generation AI-powered embedded devices for real-world applications.</p>
-    </div>
-    <img src="Profile.jpg" alt="Profile Photo" class="profile-img">
-</section>
-
-<section id="skills">
-    <h3>Technical Skills</h3>
-    <div class="card-container">
-        <div class="card">
-            <h4>Embedded Systems</h4>
-            <p>Microcontrollers, real-time systems, sensor integration.</p>
-        </div>
-        <div class="card">
-            <h4>Electronics & Circuit Design</h4>
-            <p>Hardware prototyping and electronic component analysis.</p>
-        </div>
-        <div class="card">
-            <h4>AI & Data Science</h4>
-            <p>Machine learning fundamentals and AI model deployment.</p>
-        </div>
-        <div class="card">
-            <h4>Automation Systems</h4>
-            <p>Smart control systems using embedded platforms.</p>
-        </div>
-    </div>
-</section>
-
-<section id="projects">
-    <h3>Projects</h3>
-    <div class="card-container">
-        <div class="card">
-            <h4>AI-Based Smart Embedded System</h4>
-            <p>Integrated AI decision-making into embedded hardware systems.</p>
-        </div>
-        <div class="card">
-            <h4>Sensor-Based Monitoring System</h4>
-            <p>Built monitoring platform using sensors and microcontrollers.</p>
-        </div>
-        <div class="card">
-            <h4>Automation Using Microcontrollers</h4>
-            <p>Designed scalable embedded automation solutions.</p>
-        </div>
-        <div class="card">
-            <h4>AI Model Integration with Devices</h4>
-            <p>Implemented intelligent processing inside embedded environments.</p>
-        </div>
-    </div>
-</section>
-
-<section id="contact">
-    <h3>Contact</h3>
-    <div class="card-container">
-        <div class="card">
-            <h4>Phone</h4>
-            <p>+91 7598134898</p>
-        </div>
-        <div class="card">
-            <h4>Email</h4>
-            <p>mujahith2815@gmail.com</p>
-        </div>
-        <div class="card">
-            <h4>Discord</h4>
-            <p><a href="https://discord.gg/8VfMZEnJ" target="_blank" style="color:#38bdf8;">Join Discord</a></p>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <p>&copy; 2026 M. Mohammed Mujahith</p>
-    <div class="footer-links">
-        <a href="#about">Home</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
-    <p>AI & Embedded Systems Developer</p>
-</footer>
-
-</body>
-</html><section id="about" class="hero">
     <div class="hero-text">
         <h2>Hi, I'm <span>M. Mohammed Mujahith</span></h2>
         <p>AI & Data Science student and Embedded Systems Developer focused on building intelligent hardware-software systems.</p>
-        <p>I specialize in combining electronics, microcontrollers, and AI models to create smart, real-time solutions. My work bridges hardware design, circuit development, and intelligent automation systems.</p>
-        <p>My goal is to design next-generation embedded AI devices that solve real-world engineering problems.</p>
+        <p>I specialize in electronics, microcontrollers, AI integration, and real-time embedded development.</p>
+        <p>My mission is to design next-generation intelligent embedded devices that solve real-world engineering problems.</p>
     </div>
     <img src="Profile.jpg" alt="Profile Photo" class="profile-img">
 </section>
@@ -399,19 +156,19 @@ footer .footer-links a:hover{
     <div class="card-container">
         <div class="card">
             <h4>Embedded Systems</h4>
-            <p>Microcontrollers, sensor integration, real-time systems, hardware debugging.</p>
+            <p>Microcontrollers, real-time systems, hardware debugging.</p>
         </div>
         <div class="card">
-            <h4>Electronics & Hardware</h4>
-            <p>Circuit design, prototyping, PCB concepts, electronic component analysis.</p>
+            <h4>Electronics & Circuit Design</h4>
+            <p>Prototyping, PCB concepts, electronic analysis.</p>
         </div>
         <div class="card">
             <h4>AI & Data Science</h4>
-            <p>Machine learning fundamentals, data processing, AI model integration.</p>
+            <p>Machine learning basics, model integration, data processing.</p>
         </div>
         <div class="card">
             <h4>Automation Systems</h4>
-            <p>Smart automation using embedded platforms and intelligent control logic.</p>
+            <p>Smart automation using embedded control logic.</p>
         </div>
     </div>
 </section>
@@ -421,19 +178,19 @@ footer .footer-links a:hover{
     <div class="card-container">
         <div class="card">
             <h4>AI-Based Smart Embedded System</h4>
-            <p>Designed an embedded platform integrating AI logic for real-time intelligent decision-making.</p>
+            <p>Embedded platform integrating AI logic for real-time intelligent decisions.</p>
         </div>
         <div class="card">
             <h4>Sensor-Based Monitoring System</h4>
-            <p>Developed a hardware monitoring system using sensors and microcontrollers for data acquisition and control.</p>
+            <p>Hardware monitoring solution using sensors and microcontrollers.</p>
         </div>
         <div class="card">
             <h4>Automation Using Microcontrollers</h4>
-            <p>Built automation projects integrating embedded systems for efficient and scalable control solutions.</p>
+            <p>Developed scalable embedded automation systems.</p>
         </div>
         <div class="card">
             <h4>AI Model Integration with Devices</h4>
-            <p>Implemented AI-driven processing inside embedded environments for smart system behavior.</p>
+            <p>Integrated AI processing into embedded environments.</p>
         </div>
     </div>
 </section>
@@ -448,49 +205,14 @@ footer .footer-links a:hover{
         <div class="card">
             <h4>Email</h4>
             <p>mujahith2815@gmail.com</p>
-        </div>
-        <div class="card">
-            <h4>LinkedIn</h4>
-            <p><a href="https://www.linkedin.com/" target="_blank" style="color:#38bdf8;">View Profile</a></p>
         </div>
         <div class="card">
             <h4>Discord</h4>
             <p><a href="https://discord.gg/8VfMZEnJ" target="_blank" style="color:#38bdf8;">Join on Discord</a></p>
         </div>
-    </div>
-</section>
-
-<footer>
-    &copy; 2026 M. Mohammed Mujahith | AI & Embedded Systems Developer
-</footer>
-
-</body>
-</html>    <div class="card-container">
-        <div class="card">Embedded Systems</div>
-        <div class="card">Circuit Design</div>
-        <div class="card">AI & Data Science</div>
-        <div class="card">Microcontrollers</div>
-    </div>
-</section>
-
-<section id="projects">
-    <h3>Projects</h3>
-    <div class="card-container">
-        <div class="card">AI Smart Device Integration</div>
-        <div class="card">Automation using Embedded Systems</div>
-        <div class="card">Sensor-Based Monitoring System</div>
-    </div>
-</section>
-
-<section id="contact">
-    <h3>Contact</h3>
-    <div class="card-container">
-        <div class="card">Phone: +91 7598134898</div>
-        <div class="card">Email: mujahith2815@gmail.com</div>
         <div class="card">
-            <a href="https://www.linkedin.com/" target="_blank" style="color:#38bdf8;">
-                LinkedIn Profile
-            </a>
+            <h4>LinkedIn</h4>
+            <p><a href="https://www.linkedin.com/" target="_blank" style="color:#38bdf8;">View Profile</a></p>
         </div>
     </div>
 </section>
