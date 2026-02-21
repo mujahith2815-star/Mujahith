@@ -3,145 +3,181 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M. Mohammed Mujahith | AI & Embedded Developer</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>M. Mohammed Mujahith | AI & Embedded Systems</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 body{
     background:#0f172a;
-    color:#f1f5f9;
-    line-height:1.6;
-}
-
-.container{
-    width:90%;
-    max-width:1100px;
-    margin:auto;
-    padding:40px 0;
+    color:white;
+    scroll-behavior:smooth;
 }
 
 header{
     display:flex;
+    justify-content:space-between;
     align-items:center;
-    gap:30px;
-    flex-wrap:wrap;
+    padding:20px 10%;
+    background:#0f172a;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+}
+
+header h1{
+    font-size:22px;
+    color:#38bdf8;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+section{
+    padding:100px 10%;
+    min-height:100vh;
+}
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.hero-text{
+    max-width:600px;
+}
+
+.hero-text h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.hero-text span{
+    color:#38bdf8;
+}
+
+.hero-text p{
+    line-height:1.6;
+    margin-bottom:20px;
 }
 
 .profile-img{
-    width:180px;
-    height:180px;
+    width:250px;
+    height:250px;
     border-radius:50%;
     object-fit:cover;
-    border:4px solid #38bdf8;
-    box-shadow:0 0 30px rgba(56,189,248,0.4);
+    border:5px solid #38bdf8;
+    box-shadow:0 0 40px #38bdf8;
+    transition:0.5s;
 }
 
-.header-text h1{
-    font-size:2.5rem;
-    font-weight:700;
+.profile-img:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 60px #38bdf8;
 }
 
-.header-text h2{
-    font-size:1.2rem;
-    font-weight:400;
-    color:#38bdf8;
-    margin-top:5px;
-}
-
-.section{
-    margin-top:60px;
-}
-
-.section h3{
-    font-size:1.8rem;
+h3{
+    font-size:28px;
     margin-bottom:20px;
-    border-left:5px solid #38bdf8;
-    padding-left:15px;
-}
-
-.skills span{
-    display:inline-block;
-    background:#1e293b;
-    padding:10px 15px;
-    margin:5px;
-    border-radius:20px;
-    transition:0.3s;
-}
-
-.skills span:hover{
-    background:#38bdf8;
-    color:#0f172a;
-}
-
-.project-card{
-    background:#1e293b;
-    padding:20px;
-    border-radius:10px;
-    margin-bottom:20px;
-    transition:0.3s;
-}
-
-.project-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 30px rgba(0,0,0,0.4);
-}
-
-.contact p{
-    margin:8px 0;
-}
-
-a{
     color:#38bdf8;
-    text-decoration:none;
+}
+
+ul{
+    line-height:1.8;
 }
 
 footer{
     text-align:center;
-    margin-top:60px;
-    padding:20px 0;
-    font-size:0.9rem;
-    color:#94a3b8;
-}
-
-@media(max-width:768px){
-    header{
-        flex-direction:column;
-        text-align:center;
-    }
+    padding:20px;
+    background:#020617;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-
 <header>
-    <img src="Profile.jpg" alt="Profile.jpg" class="Profile-img">
-    <div class="header-text">
-        <h1>M. Mohammed Mujahith</h1>
-        <h2>AI & Data Science | Embedded System Developer</h2>
-    </div>
+    <h1>Mujahith</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
-<div class="section">
-    <h3>About Me</h3>
-    <p>
-        Passionate AI and Embedded Systems developer focused on building intelligent hardware-software integrated systems.
-        Currently studying Artificial Intelligence and Data Science. Strong interest in electronics innovation,
-        custom device design, satellite communication systems, and real-time embedded development.
-    </p>
-</div>
+<section class="hero" id="about">
+    <div class="hero-text">
+        <h2>Hi, I'm <span>M. Mohammed Mujahith</span></h2>
+        <p>AI & Data Science student and Embedded System Developer passionate about building intelligent hardware systems and real-world AI solutions.</p>
+        <p>I focus on electronics development, hardware tools, and integrating AI with embedded platforms.</p>
+    </div>
 
-<div class="section">
+    <img src="Profile.jpg" alt="Profile Photo" class="profile-img">
+</section>
+
+<section id="skills">
+    <h3>Skills</h3>
+    <ul>
+        <li>Embedded Systems Development</li>
+        <li>Hardware Tools & Circuit Design</li>
+        <li>AI & Data Science Fundamentals</li>
+        <li>Electronics Prototyping</li>
+        <li>Sensor Integration & Microcontrollers</li>
+    </ul>
+</section>
+
+<section id="projects">
+    <h3>Projects</h3>
+    <ul>
+        <li>AI-based Smart Embedded System (Planned & Development Stage)</li>
+        <li>Electronics Hardware Prototyping Projects</li>
+        <li>Microcontroller-based Automation Systems</li>
+        <li>AI Model Integration with Hardware Devices</li>
+    </ul>
+</section>
+
+<section id="education">
+    <h3>Education</h3>
+    <ul>
+        <li>Completed 10th Standard</li>
+        <li>Completed 11th Standard</li>
+        <li>Completed 12th Standard</li>
+        <li>Currently Studying Artificial Intelligence & Data Science</li>
+    </ul>
+</section>
+
+<section id="contact">
+    <h3>Contact</h3>
+    <ul>
+        <li>Phone: +91 7598134898</li>
+        <li>Email: mujahith2815@gmail.com</li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/mohammed-mujahith-m-87ba90303" target="_blank" style="color:#38bdf8;">View Profile</a></li>
+    </ul>
+</section>
+
+<footer>
+    © 2026 M. Mohammed Mujahith | AI & Embedded Systems Developer
+</footer>
+
+</body>
+</html><div class="section">
     <h3>Skills</h3>
     <div class="skills">
         <span>Embedded Systems Development</span>
