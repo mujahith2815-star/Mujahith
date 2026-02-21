@@ -10,29 +10,29 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family:Segoe UI, sans-serif;
 }
 
 body{
     background:#0f172a;
     color:white;
-    scroll-behavior:smooth;
 }
 
 header{
+    position:fixed;
+    top:0;
+    width:100%;
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:20px 10%;
     background:#0f172a;
-    position:fixed;
-    width:100%;
-    top:0;
+    border-bottom:1px solid #1e293b;
     z-index:1000;
 }
 
 header h1{
-    font-size:22px;
+    font-size:20px;
     color:#38bdf8;
 }
 
@@ -48,14 +48,14 @@ nav a:hover{
 }
 
 section{
-    padding:100px 10%;
-    min-height:100vh;
+    padding:90px 10% 40px 10%;
 }
 
 .hero{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    flex-wrap:wrap;
 }
 
 .hero-text{
@@ -63,8 +63,8 @@ section{
 }
 
 .hero-text h2{
-    font-size:40px;
-    margin-bottom:20px;
+    font-size:36px;
+    margin-bottom:15px;
 }
 
 .hero-text span{
@@ -73,38 +73,50 @@ section{
 
 .hero-text p{
     line-height:1.6;
-    margin-bottom:20px;
+    margin-bottom:15px;
 }
 
 .profile-img{
-    width:250px;
-    height:250px;
+    width:220px;
+    height:220px;
     border-radius:50%;
     object-fit:cover;
-    border:5px solid #38bdf8;
-    box-shadow:0 0 40px #38bdf8;
-    transition:0.5s;
-}
-
-.profile-img:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 60px #38bdf8;
+    border:4px solid #38bdf8;
+    box-shadow:0 0 25px #38bdf8;
 }
 
 h3{
-    font-size:28px;
+    font-size:26px;
     margin-bottom:20px;
     color:#38bdf8;
 }
 
-ul{
-    line-height:1.8;
+.card-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.card{
+    background:#1e293b;
+    padding:15px 20px;
+    border-radius:10px;
+    transition:0.3s;
+    flex:1 1 250px;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    background:#38bdf8;
+    color:#0f172a;
 }
 
 footer{
     text-align:center;
     padding:20px;
     background:#020617;
+    margin-top:40px;
+    font-size:14px;
 }
 </style>
 </head>
@@ -122,26 +134,66 @@ footer{
     </nav>
 </header>
 
-<section class="hero" id="about">
+<section id="about" class="hero">
     <div class="hero-text">
         <h2>Hi, I'm <span>M. Mohammed Mujahith</span></h2>
-        <p>AI & Data Science student and Embedded System Developer passionate about building intelligent hardware systems and real-world AI solutions.</p>
-        <p>I focus on electronics development, hardware tools, and integrating AI with embedded platforms.</p>
+        <p>AI & Data Science student and Embedded System Developer focused on building intelligent hardware-software systems.</p>
+        <p>Passionate about electronics innovation, microcontrollers, AI model integration, and real-time embedded development.</p>
     </div>
-
     <img src="Profile.jpg" alt="Profile Photo" class="profile-img">
 </section>
 
 <section id="skills">
     <h3>Skills</h3>
-    <ul>
-        <li>Embedded Systems Development</li>
-        <li>Hardware Tools & Circuit Design</li>
-        <li>AI & Data Science Fundamentals</li>
-        <li>Electronics Prototyping</li>
-        <li>Sensor Integration & Microcontrollers</li>
-    </ul>
+    <div class="card-container">
+        <div class="card">Embedded Systems Development</div>
+        <div class="card">Hardware & Circuit Design</div>
+        <div class="card">AI & Data Science</div>
+        <div class="card">Electronics Prototyping</div>
+        <div class="card">Sensor Integration & Microcontrollers</div>
+    </div>
 </section>
+
+<section id="projects">
+    <h3>Projects</h3>
+    <div class="card-container">
+        <div class="card">AI-based Smart Embedded System</div>
+        <div class="card">Hardware Prototyping Projects</div>
+        <div class="card">Automation using Microcontrollers</div>
+        <div class="card">AI Model Integration with Devices</div>
+    </div>
+</section>
+
+<section id="education">
+    <h3>Education</h3>
+    <div class="card-container">
+        <div class="card">10th Standard Completed</div>
+        <div class="card">11th Standard Completed</div>
+        <div class="card">12th Standard Completed</div>
+        <div class="card">Currently Studying AI & Data Science</div>
+    </div>
+</section>
+
+<section id="contact">
+    <h3>Contact</h3>
+    <div class="card-container">
+        <div class="card">Phone: +91 7598134898</div>
+        <div class="card">Email: mujahith2815@gmail.com</div>
+        <div class="card">
+            LinkedIn: 
+            <a href="https://www.linkedin.com/in/mohammed-mujahith-m-87ba90303" target="_blank" style="color:#38bdf8;">
+            View Profile
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 M. Mohammed Mujahith | AI & Embedded Systems Developer
+</footer>
+
+</body>
+</html></section>
 
 <section id="projects">
     <h3>Projects</h3>
