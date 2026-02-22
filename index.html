@@ -9,31 +9,73 @@
 <style>
 
 body{
-background:#0f172a;
+background:radial-gradient(circle at center, #0a0f1f 0%, #05070f 100%);
 color:white;
 font-family:Arial, sans-serif;
 overflow-x:hidden;
+position:relative;
 }
 
-/* Background animated grid */
+/* RED THUNDER FLASH */
 body::before{
 content:"";
 position:fixed;
+top:0;
+left:0;
 width:100%;
 height:100%;
-background:
-linear-gradient(#22d3ee22 1px, transparent 1px),
-linear-gradient(90deg,#22d3ee22 1px, transparent 1px);
-background-size:40px 40px;
+background:linear-gradient(120deg, transparent 40%, rgba(255,0,0,0.15) 50%, transparent 60%);
+animation:thunderFlash 6s infinite;
+pointer-events:none;
 z-index:-1;
-animation:gridMove 10s linear infinite;
 }
 
-@keyframes gridMove{
-0%{background-position:0 0;}
-100%{background-position:40px 40px;}
+@keyframes thunderFlash{
+0%{opacity:0;}
+48%{opacity:0;}
+50%{opacity:1;}
+52%{opacity:0;}
+100%{opacity:0;}
 }
 
+/* GOLD KATANA ENERGY */
+body::after{
+content:"";
+position:fixed;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background:linear-gradient(45deg, transparent 48%, rgba(255,215,0,0.2) 50%, transparent 52%);
+animation:slashMove 10s linear infinite;
+pointer-events:none;
+z-index:-1;
+}
+
+@keyframes slashMove{
+0%{transform:translateX(-30%) rotate(0deg);}
+100%{transform:translateX(30%) rotate(360deg);}
+}
+
+/* EMBER PARTICLES */
+@keyframes emberFloat{
+0%{transform:translateY(0); opacity:0;}
+50%{opacity:1;}
+100%{transform:translateY(-900px); opacity:0;}
+}
+
+.ember{
+position:fixed;
+bottom:-10px;
+width:4px;
+height:4px;
+border-radius:50%;
+box-shadow:0 0 8px currentColor;
+animation:emberFloat linear infinite;
+z-index:-1;
+}
+
+/* EXISTING NEON UI */
 .neon-text{
 color:#22d3ee;
 text-shadow:0 0 10px #22d3ee,0 0 20px #22d3ee;
@@ -123,7 +165,7 @@ text-shadow:0 0 10px #22d3ee;
 <div class="neon-card">
 <p>
 Passionate AI & Data Science student focused on intelligent hardware integration.
-I design embedded systems that combine real-world electronics with machine learning models.
+I design embedded systems combining electronics with machine learning systems.
 My vision is building scalable AI-driven physical systems.
 </p>
 </div>
@@ -153,8 +195,7 @@ AI + Hardware Integrated Prototypes
 <section class="max-w-4xl mx-auto px-6 mt-10">
 <h2 class="section-title neon-text">Interest & Goals</h2>
 <div class="neon-card">
-Deep interest in AI-driven embedded architectures,
-advanced automation systems, and futuristic intelligent devices.
+Deep interest in AI-driven embedded architectures and futuristic automation systems.
 Goal: Build high-impact AI + hardware solutions.
 </div>
 </section>
@@ -172,7 +213,7 @@ Currently Studying Artificial Intelligence & Data Science
 <div class="neon-card">
 📞 +91 7598134898<br>
 📧 mujahith2815@gmail.com<br>
-🔗 <a href="https://www.linkedin.com/in/mohammed-mujahith-m-87ba90303?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">LinkedIn</a><br>
+🔗 <a href="https://www.linkedin.com/in/mohammed-mujahith-m-87ba90303" target="_blank">LinkedIn</a><br>
 💬 <a href="https://discord.gg/8VfMZEnJ" target="_blank">Discord</a>
 </div>
 </section>
@@ -180,6 +221,17 @@ Currently Studying Artificial Intelligence & Data Science
 <footer class="text-center">
 <p class="text-gray-400">© 2026 M.Mohammed Mujahith | All Rights Reserved</p>
 </footer>
+
+<script>
+for(let i=0;i<25;i++){
+let ember=document.createElement("div");
+ember.classList.add("ember");
+ember.style.left=Math.random()*100+"%";
+ember.style.animationDuration=(6+Math.random()*6)+"s";
+ember.style.color=Math.random()>0.5?"red":"gold";
+document.body.appendChild(ember);
+}
+</script>
 
 </body>
 </html>
