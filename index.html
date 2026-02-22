@@ -7,15 +7,42 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
+
 body{
 background:#0f172a;
 color:white;
 font-family:Arial, sans-serif;
+overflow-x:hidden;
+}
+
+/* Background animated grid */
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:
+linear-gradient(#22d3ee22 1px, transparent 1px),
+linear-gradient(90deg,#22d3ee22 1px, transparent 1px);
+background-size:40px 40px;
+z-index:-1;
+animation:gridMove 10s linear infinite;
+}
+
+@keyframes gridMove{
+0%{background-position:0 0;}
+100%{background-position:40px 40px;}
 }
 
 .neon-text{
 color:#22d3ee;
 text-shadow:0 0 10px #22d3ee,0 0 20px #22d3ee;
+animation:glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse{
+from{ text-shadow:0 0 10px #22d3ee;}
+to{ text-shadow:0 0 25px #22d3ee,0 0 40px #22d3ee;}
 }
 
 .neon-card{
@@ -24,22 +51,39 @@ border:1px solid #22d3ee;
 box-shadow:0 0 10px #22d3ee55;
 border-radius:15px;
 padding:20px;
-transition:0.3s;
+transition:0.4s;
+opacity:0;
+transform:translateY(40px);
+animation:fadeUp 1s forwards;
 }
 
 .neon-card:hover{
-box-shadow:0 0 20px #22d3ee;
-transform:translateY(-5px);
+box-shadow:0 0 25px #22d3ee;
+transform:translateY(-5px) scale(1.02);
+}
+
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 .profile-circle{
-width:180px;
-height:180px;
+width:190px;
+height:190px;
 border-radius:50%;
 border:4px solid #22d3ee;
-box-shadow:0 0 20px #22d3ee;
+box-shadow:0 0 25px #22d3ee;
 object-fit:cover;
-object-position:center 25%;
+object-position:center 35%;
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
 }
 
 .section-title{
@@ -52,103 +96,87 @@ border-top:1px solid #22d3ee33;
 padding:20px 0;
 margin-top:40px;
 }
+
 a{
 color:#22d3ee;
+transition:0.3s;
 }
+
 a:hover{
 color:#67e8f9;
+text-shadow:0 0 10px #22d3ee;
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<section class="text-center py-10">
+<section class="text-center py-12">
 <img src="Profile.jpg" alt="Profile Photo" class="profile-circle mx-auto mb-6">
 <h1 class="text-4xl neon-text font-bold">M.Mohammed Mujahith</h1>
 <p class="mt-3 text-lg">AI & Data Science | Embedded System Developer</p>
 </section>
 
-<!-- ABOUT -->
 <section class="max-w-4xl mx-auto px-6">
 <h2 class="section-title neon-text">About My Career</h2>
 <div class="neon-card">
 <p>
-Passionate AI & Data Science student with strong foundation in Embedded Systems and electronics development.
-Focused on building intelligent hardware-integrated systems combining machine learning and real-world devices.
-I enjoy solving complex engineering problems using innovation and practical experimentation.
+Passionate AI & Data Science student focused on intelligent hardware integration.
+I design embedded systems that combine real-world electronics with machine learning models.
+My vision is building scalable AI-driven physical systems.
 </p>
 </div>
 </section>
 
-<!-- SKILLS -->
 <section class="max-w-4xl mx-auto px-6 mt-10">
 <h2 class="section-title neon-text">Skills & Knowledge</h2>
 <div class="neon-card">
-<p>
-• AI & Machine Learning Concepts<br>
-• Data Science & Analytics<br>
-• Embedded Systems Development<br>
-• Hardware Tools & Circuit Designing<br>
-• IoT Development<br>
-• Microcontrollers & Sensors Integration<br>
-• Electronics Prototyping
-</p>
+AI & Machine Learning Concepts<br>
+Data Science & Analytics<br>
+Embedded Systems Development<br>
+Hardware Tools & Electronics Prototyping<br>
+IoT Systems & Sensor Integration
 </div>
 </section>
 
-<!-- PROJECTS -->
 <section class="max-w-4xl mx-auto px-6 mt-10">
 <h2 class="section-title neon-text">Projects</h2>
 <div class="neon-card">
-<p>
-• AI-based Smart Monitoring System<br>
-• Embedded IoT Automation Projects<br>
-• Hardware + ML Integrated Prototypes<br>
-• Sensor-Based Intelligent Systems<br>
-• Planned Advanced AI-Embedded Hybrid Systems
-</p>
+AI-based Smart Monitoring System<br>
+Embedded IoT Automation Projects<br>
+Sensor-Based Intelligent Systems<br>
+AI + Hardware Integrated Prototypes
 </div>
 </section>
 
-<!-- GOALS -->
 <section class="max-w-4xl mx-auto px-6 mt-10">
 <h2 class="section-title neon-text">Interest & Goals</h2>
 <div class="neon-card">
-<p>
-Deep interest in Artificial Intelligence, intelligent hardware systems, futuristic automation and
-advanced research in AI-driven embedded architecture.  
-Goal is to build scalable AI-integrated hardware solutions that solve real-world problems.
-</p>
+Deep interest in AI-driven embedded architectures,
+advanced automation systems, and futuristic intelligent devices.
+Goal: Build high-impact AI + hardware solutions.
 </div>
 </section>
 
-<!-- EDUCATION -->
 <section class="max-w-4xl mx-auto px-6 mt-10">
 <h2 class="section-title neon-text">Education</h2>
 <div class="neon-card">
-<p>
 Completed 10th, 11th, 12th<br>
-Currently Studying: Artificial Intelligence & Data Science
-</p>
+Currently Studying Artificial Intelligence & Data Science
 </div>
 </section>
 
-<!-- CONTACT -->
 <section class="max-w-4xl mx-auto px-6 mt-10">
 <h2 class="section-title neon-text">Contact</h2>
 <div class="neon-card">
-<p>
 📞 +91 7598134898<br>
 📧 mujahith2815@gmail.com<br>
 🔗 <a href="https://www.linkedin.com/in/mohammed-mujahith-m-87ba90303?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">LinkedIn</a><br>
 💬 <a href="https://discord.gg/8VfMZEnJ" target="_blank">Discord</a>
-</p>
 </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="text-center">
 <p class="text-gray-400">© 2026 M.Mohammed Mujahith | All Rights Reserved</p>
 </footer>
