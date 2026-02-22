@@ -1,217 +1,681 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mohammed | AI Systems</title>
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohammed | AI Systems Architect</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&amp;family=Rajdhani:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: linear-gradient(135deg, #030712 0%, #0a0f1f 50%, #050816 100%);
+            color: white;
+            overflow-x: hidden;
+        }
 
-body{
-    font-family: 'Segoe UI', sans-serif;
-    background:#050816;
-    color:white;
-    overflow-x:hidden;
-}
+        .app-wrapper {
+            width: 100%;
+            min-height: 100%;
+            overflow-y: auto;
+            position: relative;
+        }
 
-/* Neon Glow Animation */
-@keyframes glow {
-    0% { box-shadow: 0 0 10px #00ffff; }
-    50% { box-shadow: 0 0 25px #00ffff; }
-    100% { box-shadow: 0 0 10px #00ffff; }
-}
+        /* Animated Background Grid */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
 
-header{
-    text-align:center;
-    padding:60px 20px;
-}
+        /* Floating Particles */
+        .particle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: #00ffff;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.4;
+            animation: float 15s infinite ease-in-out;
+        }
 
-/* Profile Neon Circle */
-.profile-img{
-    width:220px;
-    height:220px;
-    border-radius:50%;
-    object-fit:cover;
-    border:3px solid #00ffff;
-    animation:glow 2s infinite ease-in-out;
-    margin-bottom:20px;
-}
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.4; }
+            25% { transform: translateY(-100px) translateX(50px); opacity: 0.8; }
+            50% { transform: translateY(-50px) translateX(-30px); opacity: 0.3; }
+            75% { transform: translateY(-150px) translateX(20px); opacity: 0.6; }
+        }
 
-h1{
-    font-size:34px;
-    color:#00ffff;
-    text-shadow:0 0 15px #00ffff;
-}
+        /* Neon Glow Animations */
+        @keyframes pulse-glow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 
+                            0 0 40px rgba(0, 255, 255, 0.3), 
+                            0 0 60px rgba(0, 255, 255, 0.1);
+            }
+            50% { 
+                box-shadow: 0 0 30px rgba(0, 255, 255, 0.8), 
+                            0 0 60px rgba(0, 255, 255, 0.5), 
+                            0 0 90px rgba(0, 255, 255, 0.2);
+            }
+        }
 
-.subtitle{
-    margin-top:10px;
-    color:#00cccc;
-}
+        @keyframes text-glow {
+            0%, 100% { text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00888888; }
+            50% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00cccc; }
+        }
 
-/* Section */
-section{
-    max-width:1200px;
-    margin:50px auto;
-    padding:0 20px;
-}
+        @keyframes border-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-h2{
-    margin-bottom:25px;
-    color:#00ffff;
-    text-shadow:0 0 10px #00ffff;
-    border-bottom:1px solid #00ffff55;
-    padding-bottom:8px;
-}
+        @keyframes scan-line {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
+        }
 
-/* Neon Card */
-.card{
-    background:#0b1120;
-    padding:20px;
-    border:1px solid #00ffff33;
-    border-radius:12px;
-    margin-bottom:20px;
-    transition:0.3s;
-}
+        /* Profile Image */
+        .profile-container {
+            position: relative;
+            display: inline-block;
+        }
 
-.card:hover{
-    border-color:#00ffff;
-    box-shadow:0 0 20px #00ffff55;
-    transform:translateY(-5px);
-}
+        .profile-ring {
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #00ffff, #0088ff, #00ffff, #00ff88);
+            background-size: 400% 400%;
+            animation: border-flow 3s ease infinite;
+            opacity: 0.8;
+        }
 
-/* Project Grid */
-.projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
-}
+        .profile-ring::before {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            border-radius: 50%;
+            background: #050816;
+        }
 
-a{
-    color:#00ffff;
-    text-decoration:none;
-}
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+            animation: pulse-glow 3s infinite ease-in-out;
+            background: linear-gradient(135deg, #0a1628, #0d2040);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+        }
 
-a:hover{
-    text-shadow:0 0 10px #00ffff;
-}
+        /* Typography */
+        .main-title {
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            font-size: 2.5rem;
+            color: #00ffff;
+            animation: text-glow 2s infinite ease-in-out;
+            letter-spacing: 2px;
+        }
 
-/* Footer */
-footer{
-    text-align:center;
-    padding:30px;
-    border-top:1px solid #00ffff33;
-    margin-top:60px;
-    background:#0b1120;
-}
+        .subtitle {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 400;
+            color: #00cccc;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+        }
 
-</style>
-</head>
+        /* Section Headers */
+        .section-header {
+            font-family: 'Orbitron', monospace;
+            font-weight: 600;
+            color: #00ffff;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            position: relative;
+            display: inline-block;
+        }
 
-<body>
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #00ffff, transparent);
+        }
 
-<header>
-    <img src="profile.jpg" alt="Profile Photo" class="profile-img">
-    <h1>M. Mohammed Mujahith</h1>
-    <p class="subtitle">AI • Embedded Systems • Intelligent Architecture</p>
-</header>
+        /* Cards */
+        .neon-card {
+            background: linear-gradient(135deg, rgba(11, 17, 32, 0.95), rgba(6, 12, 24, 0.98));
+            border: 1px solid rgba(0, 255, 255, 0.15);
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-<section>
-<h2>Career</h2>
-<div class="card">
-Building intelligent hardware ecosystems integrating AI, embedded systems,
-wireless communication, and autonomous automation platforms.
-</div>
-</section>
+        .neon-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
 
-<section>
-<h2>Skills & Abilities</h2>
-<div class="card">
-Python • ESP32 • Raspberry Pi • Linux • Embedded C • AI Deployment • BLE • LoRa • WiFi • 
-System Architecture • Hardware Prototyping • Automation Engineering
-</div>
-</section>
+        .neon-card:hover::before {
+            left: 100%;
+        }
 
-<section>
-<h2>Knowledge</h2>
-<div class="card">
-Artificial Intelligence, distributed networks, system design,
-hardware-software integration, embedded optimization, AI acceleration research.
-</div>
-</section>
+        .neon-card:hover {
+            border-color: rgba(0, 255, 255, 0.6);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.2), 
+                        0 10px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(-8px);
+        }
 
-<section>
-<h2>Interests & Goals</h2>
-<div class="card">
-Mission to build a unified intelligent ecosystem combining AI, communication,
-wearables, adaptive systems, and decentralized automation.
-</div>
-</section>
+        /* Project Cards */
+        .project-card {
+            background: linear-gradient(135deg, rgba(11, 17, 32, 0.9), rgba(15, 25, 45, 0.95));
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
 
-<section>
-<h2>Projects</h2>
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: linear-gradient(180deg, #00ffff, #0088ff);
+            transition: height 0.3s ease;
+        }
 
-<div class="projects">
+        .project-card:hover::before {
+            height: 100%;
+        }
 
-<div class="card">Orvix AI Core System – Portable voice-controlled hardware AI.</div>
-<div class="card">Orvix Advanced Architecture Blueprint – 14-layer framework.</div>
-<div class="card">AI Phone-Like Device – Raspberry Pi smart hardware.</div>
-<div class="card">Custom 40×32 LED Matrix Display – Self-built SMD board.</div>
-<div class="card">Long-Range Radio Communication Device – SIM-free system.</div>
-<div class="card">Satellite Ground Server – AI coordination station.</div>
-<div class="card">Hybrid Satellite + WiFi Network – Integrated routing system.</div>
-<div class="card">ESP32 Embedded Control Experiments – Real-time control system.</div>
-<div class="card">Multi-Bluetooth Audio Broadcaster – Synchronized streaming.</div>
-<div class="card">Phi3 + Ollama Local Voice AI – Self-hosted speech AI.</div>
-<div class="card">Modular Code Execution Framework – Structured runtime system.</div>
-<div class="card">Universal Motherboard Concept – Multi-frequency AI hardware.</div>
-<div class="card">AI Acceleration Research – TPU optimization experiments.</div>
-<div class="card">Web-to-Hardware AI Transition – Physical AI integration.</div>
-<div class="card">Linux System Engineering Architecture – Structured deployment.</div>
-<div class="card">Direct-Execution AI Security Model – Safeguarded instant AI.</div>
-<div class="card">Technical Learning Documentation System – Structured study framework.</div>
-<div class="card">Orvix Band Lite – Wearable field detector.</div>
-<div class="card">Pocket Satellite Ground Node – Portable sync unit.</div>
-<div class="card">Modular Mic Cube – Beamforming microphone system.</div>
-<div class="card">Universal Frequency Badge – Multi-protocol wearable remote.</div>
-<div class="card">Air-Gesture Controller Ring – Motion-based BLE controller.</div>
-<div class="card">Self-Learning Hardware OS – Adaptive evolving OS.</div>
-<div class="card">Room Brain Automation Node – Offline automation device.</div>
-<div class="card">Cylindrical Personal AI Tower – Integrated AI hub.</div>
-<div class="card">Neural-State Display Interface – AI state visualization.</div>
-<div class="card">Multi-Device Telepresence Mesh – Low-power camera network.</div>
-<div class="card">Material Acoustic Fingerprint Scanner – Vibration detection.</div>
-<div class="card">Pocket Lightning Mapper – RF storm sensor.</div>
-<div class="card">Personal Magnetic Mapping System – Hall-sensor mapping.</div>
-<div class="card">Object-Tagging Laser Beacon System – BLE anchor tracker.</div>
-<div class="card">Micro-Weather Seed Network – Atmospheric sensors.</div>
-<div class="card">Smell-Pattern Detection System – Chemical analyzer.</div>
-<div class="card">Vibration-Language Wristband – Haptic communication wearable.</div>
-<div class="card">Ultrasonic Sound Hologram Projector – Floating audio system.</div>
-<div class="card">Living Fractal Circuit Board – Pulse-driven electronic art.</div>
-<div class="card">Thought-Trigger EMG Key – Muscle-based AI commands.</div>
-<div class="card">Silence Mapping System – Acoustic absorption analyzer.</div>
+        .project-card:hover {
+            border-color: rgba(0, 255, 255, 0.4);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+            transform: translateX(8px);
+        }
 
-</div>
-</section>
+        .project-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
 
-<section>
-<h2>Contact</h2>
-<div class="card">
-📧 mujahith2815@gmail.com<br>
-🔗 <a href="https://www.linkedin.com/in/mohammed-mujahith-m-87ba90303" target="_blank">LinkedIn</a><br>
-💬 <a href="https://discord.gg/8VfMZEnJ" target="_blank">Discord</a>
-</div>
-</section>
+        .project-title {
+            font-family: 'Orbitron', monospace;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #00ffff;
+            margin-bottom: 8px;
+        }
 
-<footer>
-© 2026 M. Mohammed Mujahith
-</footer>
+        .project-desc {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.5;
+        }
 
-</body>
+        /* Skills Pills */
+        .skill-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: rgba(0, 255, 255, 0.08);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #00cccc;
+            transition: all 0.3s ease;
+        }
+
+        .skill-pill:hover {
+            background: rgba(0, 255, 255, 0.15);
+            border-color: rgba(0, 255, 255, 0.5);
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+        }
+
+        /* Footer */
+        .footer-glow {
+            background: linear-gradient(180deg, transparent, rgba(0, 255, 255, 0.05));
+            border-top: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 1.8rem;
+            }
+            .profile-img {
+                width: 140px;
+                height: 140px;
+                font-size: 48px;
+            }
+            .profile-ring {
+                inset: -6px;
+            }
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div class="app-wrapper"><!-- Background Effects -->
+   <div class="bg-grid"></div>
+   <div class="particle" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
+   <div class="particle" style="top: 30%; left: 80%; animation-delay: 2s;"></div>
+   <div class="particle" style="top: 60%; left: 15%; animation-delay: 4s;"></div>
+   <div class="particle" style="top: 80%; left: 70%; animation-delay: 6s;"></div>
+   <div class="particle" style="top: 45%; left: 50%; animation-delay: 8s;"></div>
+   <div class="content-wrapper"><!-- Header -->
+    <header class="text-center pt-16 pb-12 px-6">
+     <div class="profile-container mb-8">
+      <div class="profile-ring"></div>
+      <div class="profile-img">
+       <svg viewbox="0 0 100 100" width="100" height="100"><defs>
+         <lineargradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#00ffff;stop-opacity:0.8" />
+          <stop offset="100%" style="stop-color:#0088ff;stop-opacity:0.6" />
+         </lineargradient>
+        </defs> <circle cx="50" cy="35" r="18" fill="url(#avatarGrad)" opacity="0.9" /> <ellipse cx="50" cy="75" rx="28" ry="20" fill="url(#avatarGrad)" opacity="0.7" />
+       </svg>
+      </div>
+     </div>
+     <h1 id="profile-name" class="main-title mb-4">M. Mohammed Mujahith</h1>
+     <p id="profile-subtitle" class="subtitle">AI • Embedded Systems • Intelligent Architecture</p>
+    </header><!-- Career Section -->
+    <section class="max-w-5xl mx-auto px-6 mb-16">
+     <h2 class="section-header text-xl mb-8">Career Vision</h2>
+     <div class="neon-card p-8">
+      <p id="career-description" class="text-lg leading-relaxed text-gray-300">Building intelligent hardware ecosystems integrating AI, embedded systems, wireless communication, and autonomous automation platforms. Focused on creating seamless human-machine interfaces that push the boundaries of what's possible.</p>
+     </div>
+    </section><!-- Skills Section -->
+    <section class="max-w-5xl mx-auto px-6 mb-16">
+     <h2 class="section-header text-xl mb-8">Technical Arsenal</h2>
+     <div class="neon-card p-8">
+      <div class="flex flex-wrap gap-3"><span class="skill-pill">🐍 Python</span> <span class="skill-pill">⚡ ESP32</span> <span class="skill-pill">🍓 Raspberry Pi</span> <span class="skill-pill">🐧 Linux</span> <span class="skill-pill">💾 Embedded C</span> <span class="skill-pill">🤖 AI Deployment</span> <span class="skill-pill">📡 BLE</span> <span class="skill-pill">📻 LoRa</span> <span class="skill-pill">📶 WiFi</span> <span class="skill-pill">🏗️ System Architecture</span> <span class="skill-pill">🔧 Hardware Prototyping</span> <span class="skill-pill">⚙️ Automation</span>
+      </div>
+     </div>
+    </section><!-- Knowledge Section -->
+    <section class="max-w-5xl mx-auto px-6 mb-16">
+     <h2 class="section-header text-xl mb-8">Knowledge Domains</h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="neon-card p-6 text-center">
+       <div class="text-3xl mb-3">
+        🧠
+       </div>
+       <h3 class="text-cyan-400 font-semibold mb-2" style="font-family: 'Orbitron', monospace;">Artificial Intelligence</h3>
+       <p class="text-sm text-gray-400">Neural networks, ML deployment, edge AI</p>
+      </div>
+      <div class="neon-card p-6 text-center">
+       <div class="text-3xl mb-3">
+        🌐
+       </div>
+       <h3 class="text-cyan-400 font-semibold mb-2" style="font-family: 'Orbitron', monospace;">Distributed Networks</h3>
+       <p class="text-sm text-gray-400">Mesh systems, decentralized protocols</p>
+      </div>
+      <div class="neon-card p-6 text-center">
+       <div class="text-3xl mb-3">
+        📐
+       </div>
+       <h3 class="text-cyan-400 font-semibold mb-2" style="font-family: 'Orbitron', monospace;">System Design</h3>
+       <p class="text-sm text-gray-400">Architecture patterns, optimization</p>
+      </div>
+      <div class="neon-card p-6 text-center">
+       <div class="text-3xl mb-3">
+        🔗
+       </div>
+       <h3 class="text-cyan-400 font-semibold mb-2" style="font-family: 'Orbitron', monospace;">HW/SW Integration</h3>
+       <p class="text-sm text-gray-400">Firmware, drivers, protocols</p>
+      </div>
+      <div class="neon-card p-6 text-center">
+       <div class="text-3xl mb-3">
+        🚀
+       </div>
+       <h3 class="text-cyan-400 font-semibold mb-2" style="font-family: 'Orbitron', monospace;">Embedded Optimization</h3>
+       <p class="text-sm text-gray-400">Real-time systems, low-power design</p>
+      </div>
+      <div class="neon-card p-6 text-center">
+       <div class="text-3xl mb-3">
+        ⚡
+       </div>
+       <h3 class="text-cyan-400 font-semibold mb-2" style="font-family: 'Orbitron', monospace;">AI Acceleration</h3>
+       <p class="text-sm text-gray-400">TPU optimization, inference tuning</p>
+      </div>
+     </div>
+    </section><!-- Interests & Goals -->
+    <section class="max-w-5xl mx-auto px-6 mb-16">
+     <h2 class="section-header text-xl mb-8">Mission Statement</h2>
+     <div class="neon-card p-8">
+      <div class="flex items-start gap-6">
+       <div class="text-5xl">
+        🎯
+       </div>
+       <div>
+        <p class="text-lg leading-relaxed text-gray-300">Building a unified intelligent ecosystem combining AI, communication, wearables, adaptive systems, and decentralized automation. Creating technology that anticipates needs, learns continuously, and operates seamlessly across all devices and environments.</p>
+       </div>
+      </div>
+     </div>
+    </section><!-- Projects Section -->
+    <section class="max-w-5xl mx-auto px-6 mb-16">
+     <h2 class="section-header text-xl mb-8">Project Portfolio</h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="project-card">
+       <div class="project-icon">
+        🤖
+       </div>
+       <div class="project-title">
+        Orvix AI Core System
+       </div>
+       <div class="project-desc">
+        Portable voice-controlled hardware AI with natural language processing capabilities
+       </div>
+      </div>
+      <div class="project-card">
+       <div class="project-icon">
+        🏛️
+       </div>
+       <div class="project-title">
+        Orvix Advanced Architecture
+       </div>
+       <div class="project-desc">
+        14-layer framework blueprint for intelligent system design
+       </div>
+      </div>
+      <div class="project-card">
+       <div class="project-icon">
+        📱
+       </div>
+       <div class="project-title">
+        AI Phone-Like Device
+       </div>
+       <div class="project-desc">
+        Raspberry Pi-powered smart hardware with custom AI integration
+       </div>
+      </div>
+      <div class="project-card">
+       <div class="project-icon">
+        💡
+       </div>
+       <div class="project-title">
+        40×32 LED Matrix Display
+       </div>
+       <div class="project-desc">
+        Self-built SMD board with custom animation engine
+       </div>
+      </div>
+      <div class="project-card">
+       <div class="project-icon">
+        📡
+       </div>
+       <div class="project-title">
+        Long-Range Radio Comm
+       </div>
+       <div class="project-desc">
+        SIM-free communication system for remote connectivity
+       </div>
+      </div>
+      <div class="project-card">
+       <div class="project-icon">
+        🛰️
+       </div>
+       <div class="project-title">
+        Satellite Ground Server
+       </div>
+       <div class="project-desc">
+        AI coordination station for distributed processing
+       </div>
+      </div>
+      <div class="project-card">
+       <div class="project-icon">
+        🌍
+       </div>
+       <div class="project-title">
+        Hybrid Network System
+       </div>
+       <div class="project-desc">
+        Integrated satellite + WiFi routing architecture
+       </div>
+      </div>
+      <div class="project-card">
+       <div class="project-icon">
+        ⚡
+       </div>
+       <div class="project-title">
+        ESP32 Control Systems
+       </div>
+       <div class="project-desc">
+        Real-time embedded control experiments
+       </div>
+      </div>
+      <div class="project-card">
+       <div class="project-icon">
+        🔊
+       </div>
+       <div class="project-title">
+        Multi-BT Audio Broadcaster
+       </div>
+       <div class="project-desc">
+        Synchronized audio streaming across multiple devices
+       </div>
+      </div>
+      <div class="project-card">
+       <div class="project-icon">
+        🗣️
+       </div>
+       <div class="project-title">
+        Phi3 + Ollama Voice AI
+       </div>
+       <div class="project-desc">
+        Self-hosted local speech AI with privacy focus
+       </div>
+      </div>
+      <div class="project-card">
+       <div class="project-icon">
+        🧩
+       </div>
+       <div class="project-title">
+        Modular Code Framework
+       </div>
+       <div class="project-desc">
+        Structured runtime system for dynamic execution
+       </div>
+      </div>
+      <div class="project-card">
+       <div class="project-icon">
+        🔌
+       </div>
+       <div class="project-title">
+        Universal Motherboard
+       </div>
+       <div class="project-desc">
+        Multi-frequency AI hardware concept design
+       </div>
+      </div>
+     </div>
+    </section><!-- Footer -->
+    <footer class="footer-glow py-12 text-center">
+     <div class="flex justify-center gap-6 mb-6"><a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors">
+       <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+       </svg></a> <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors">
+       <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+       </svg></a> <a href="#" class="text-cyan-400 hover:text-cyan-300 transition-colors">
+       <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+       </svg></a>
+     </div>
+     <p class="text-gray-500 text-sm" style="font-family: 'Orbitron', monospace;">© 2024 M. Mohammed Mujahith • Designed with passion for innovation</p>
+    </footer>
+   </div>
+  </div>
+  <script>
+        const defaultConfig = {
+            profile_name: 'M. Mohammed Mujahith',
+            profile_subtitle: 'AI • Embedded Systems • Intelligent Architecture',
+            career_description: 'Building intelligent hardware ecosystems integrating AI, embedded systems, wireless communication, and autonomous automation platforms. Focused on creating seamless human-machine interfaces that push the boundaries of what\'s possible.',
+            background_color: '#050816',
+            surface_color: '#0b1120',
+            text_color: '#d1d5db',
+            primary_action_color: '#00ffff',
+            secondary_action_color: '#00cccc',
+            font_family: 'Rajdhani',
+            font_size: 16
+        };
+
+        async function onConfigChange(config) {
+            const nameEl = document.getElementById('profile-name');
+            const subtitleEl = document.getElementById('profile-subtitle');
+            const careerEl = document.getElementById('career-description');
+
+            if (nameEl) nameEl.textContent = config.profile_name || defaultConfig.profile_name;
+            if (subtitleEl) subtitleEl.textContent = config.profile_subtitle || defaultConfig.profile_subtitle;
+            if (careerEl) careerEl.textContent = config.career_description || defaultConfig.career_description;
+
+            // Apply colors
+            const bgColor = config.background_color || defaultConfig.background_color;
+            const surfaceColor = config.surface_color || defaultConfig.surface_color;
+            const textColor = config.text_color || defaultConfig.text_color;
+            const primaryColor = config.primary_action_color || defaultConfig.primary_action_color;
+            const secondaryColor = config.secondary_action_color || defaultConfig.secondary_action_color;
+
+            document.body.style.background = `linear-gradient(135deg, ${bgColor} 0%, ${surfaceColor} 50%, ${bgColor} 100%)`;
+            
+            document.querySelectorAll('.neon-card, .project-card').forEach(card => {
+                card.style.background = `linear-gradient(135deg, ${surfaceColor}f2, ${bgColor}fa)`;
+                card.style.borderColor = `${primaryColor}26`;
+            });
+
+            document.querySelectorAll('.main-title, .section-header, .project-title').forEach(el => {
+                el.style.color = primaryColor;
+            });
+
+            document.querySelectorAll('.subtitle, .skill-pill').forEach(el => {
+                el.style.color = secondaryColor;
+            });
+
+            document.querySelectorAll('p.text-gray-300, p.text-gray-400, .project-desc').forEach(el => {
+                el.style.color = textColor;
+            });
+
+            // Apply fonts
+            const fontFamily = config.font_family || defaultConfig.font_family;
+            const fontSize = config.font_size || defaultConfig.font_size;
+            
+            document.body.style.fontFamily = `'${fontFamily}', sans-serif`;
+            document.body.style.fontSize = `${fontSize}px`;
+
+            document.querySelectorAll('.main-title, .section-header, .project-title').forEach(el => {
+                el.style.fontFamily = `'Orbitron', '${fontFamily}', monospace`;
+            });
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [
+                    {
+                        get: () => config.background_color || defaultConfig.background_color,
+                        set: (value) => { config.background_color = value; window.elementSdk.setConfig({ background_color: value }); }
+                    },
+                    {
+                        get: () => config.surface_color || defaultConfig.surface_color,
+                        set: (value) => { config.surface_color = value; window.elementSdk.setConfig({ surface_color: value }); }
+                    },
+                    {
+                        get: () => config.text_color || defaultConfig.text_color,
+                        set: (value) => { config.text_color = value; window.elementSdk.setConfig({ text_color: value }); }
+                    },
+                    {
+                        get: () => config.primary_action_color || defaultConfig.primary_action_color,
+                        set: (value) => { config.primary_action_color = value; window.elementSdk.setConfig({ primary_action_color: value }); }
+                    },
+                    {
+                        get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+                        set: (value) => { config.secondary_action_color = value; window.elementSdk.setConfig({ secondary_action_color: value }); }
+                    }
+                ],
+                borderables: [],
+                fontEditable: {
+                    get: () => config.font_family || defaultConfig.font_family,
+                    set: (value) => { config.font_family = value; window.elementSdk.setConfig({ font_family: value }); }
+                },
+                fontSizeable: {
+                    get: () => config.font_size || defaultConfig.font_size,
+                    set: (value) => { config.font_size = value; window.elementSdk.setConfig({ font_size: value }); }
+                }
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ['profile_name', config.profile_name || defaultConfig.profile_name],
+                ['profile_subtitle', config.profile_subtitle || defaultConfig.profile_subtitle],
+                ['career_description', config.career_description || defaultConfig.career_description]
+            ]);
+        }
+
+        // Initialize SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d1b5cf435f312a3',t:'MTc3MTczMDU4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
